@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>File Encryption and Decryption</title>
+</head>
+<body>
+    <header>
+        <h1>File Encryption & Decryption</h1>
+        <p>Protecting Your Data</p>
+    </header>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="txt">Select a file to process:</label>
+        <input type="file" id="txt" name="txt" accept=".txt" required>
+        <br>
+        <input type="submit" name="encrypt" value="Encrypt">
+        <input type="submit" name="decrypt" value="Decrypt">
+    </form>
+    <p id="message" style="font-size: large;">{{ msg }} </p>
+    <script>
+        const messageElement = document.getElementById('message');
+        const urlParams = new URLSearchParams(window.location.search);
+        const messageParam = urlParams.get('message');
+        if (messageParam) {
+            messageElement.textContent = messageParam;
+        }
+    </script>
+</body>
+
+<footer>
+    <p>&copy; 2023 Encryption & Decryption Project</p>
+</footer>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption & Decryption Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styless2.css') }}">
+</head>
+<body>
+    <header>
+        <h1>File Encryption & Decryption</h1>
+        <p>Protecting Your Data</p>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h2>Securing Your Files</h2>
+            <p>Explore our encryption and decryption tools to keep your data safe and accessible.</p>
+        </section>
+        
+        <section class="features">
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/Lock1.png') }}" alt="Lock Icon" >
+                <h3>Encryption</h3>
+                <p>Encrypt your sensitive files to ensure privacy.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/Unlock1.png') }}" alt="Unlock Icon">
+                <h3>Decryption</h3>
+                <p>Effortlessly decrypt your files when needed.</p>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <h1>Choose a File Type</h1>
+    <p>Select the type of file :</p>
+
+    <button onclick="redirectToPage('pdf')">PDF</button>
+    <button onclick="redirectToPage('docx')">DOCX</button>
+    <button onclick="redirectToPage('audio')">Audio</button>
+    <button onclick="redirectToPage('txt')">Text (TXT)</button>
+    <button onclick="redirectToPage('image')">Image</button>
+    <button onclick="redirectToPage('xlsx')">XLSX</button>
+
+    <script>
+        function redirectToPage(fileType) {
+            switch (fileType) {
+                case 'pdf':
+                    window.location.href = '/pdf';
+                    break;
+                case 'docx':
+                    window.location.href = '/docx';
+                    break;
+                case 'audio':
+                    window.location.href = '/audio';
+                    break;
+                case 'txt':
+                    window.location.href = '/txt';
+                    break;
+                case 'image':
+                    window.location.href = '/image';
+                    break;
+                case 'xlsx':
+                    window.location.href = '/xlsx';
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>     
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Encryption & Decryption Project</p>
+    </footer>
+    
+   
+</body>
+</html>
